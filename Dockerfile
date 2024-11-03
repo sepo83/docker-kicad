@@ -38,7 +38,7 @@ RUN \
     libgstreamer-plugins-bad1.0 \
     libgstreamer-plugins-base1.0 \
     libwebkit2gtk-4.0-37 \
-    libwx-perl && \
+    libwx-perl \
     kicad && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
