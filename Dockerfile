@@ -3,13 +3,16 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 # set version label
 #ARG BUILD_DATE
 #ARG VERSION
-#ARG FREECAD_VERSION
+#ARG KICAD_VERSION
 #LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 #LABEL maintainer=""
 
 # title
 ENV TITLE=KiCad \
     SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+ENV KICAD_CONFIG_HOME=/config/kicad-config
+ENV KICAD_DOCUMENTS_HOME=/config/kicad-documents
 
 RUN \
   echo "**** add icon ****" && \
@@ -20,7 +23,6 @@ RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
   apt-get install --no-install-recommends -y \
-    jq \
     firefox-esr \
     gstreamer1.0-alsa \
     gstreamer1.0-gl \
