@@ -41,7 +41,12 @@ RUN \
     libgstreamer-plugins-base1.0 \
     libwebkit2gtk-4.0-37 \
     libwx-perl \
-    kicad && \
+    kicad/bookworm-backports  \
+    kicad-footprints/bookworm-backports \
+    kicad-libraries/bookworm-backports \
+    kicad-packages3d/bookworm-backports \
+    kicad-symbols/bookworm-backports \
+    kicad-templates/bookworm-backports && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
